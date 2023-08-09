@@ -1,6 +1,6 @@
 # ANZ Frontend Engineer Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It is also hosted on [Vercel](https://anz-fe-assignment.vercel.app/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and then ejected using `npm run eject`. It is also hosted on [Vercel](https://anz-fe-assignment.vercel.app/).
 
 ## Design Decisions
 
