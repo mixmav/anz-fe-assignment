@@ -1,25 +1,25 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import AnzLogo from 'img/anz-logo.png';
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
+        <nav className="navbar" role="navigation">
+            <div className="navbar__item navbar__item--content-centered">
                 <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/"
+                    className="navbar__anz-link-logo"
+                    aria-label="ANZ Home"
                 >
-                    Learn React
+                    <img src={AnzLogo} alt="ANZ Logo" />
                 </a>
-            </header>
-        </div>
+                <span className="navbar__tagline">
+                    ANZ Institutional Insights
+                </span>
+            </div>
+            <div className="navbar__item navbar__item--content-centered">
+                <span>John doe</span>
+            </div>
+        </nav>
     );
 }
 
