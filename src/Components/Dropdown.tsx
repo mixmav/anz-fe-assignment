@@ -1,7 +1,7 @@
 /**
  * Accessible dropdown menu
  * * Using (react-accessible-dropdown-menu-hook)
- * * Handles menu and trigger accessibility props
+ * * Which handles menu and trigger accessibility attributes
  */
 
 import { ReactElement, ReactNode, cloneElement } from 'react';
