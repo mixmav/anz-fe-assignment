@@ -14,7 +14,7 @@
     color: var(--primary-text-color);
 }
 
-.button_transparent:focus {
+.button_transparent:focus-visible {
     outline: var(--primary-text-color) solid 1px;
 }
 

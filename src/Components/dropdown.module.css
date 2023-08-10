@@ -40,7 +40,7 @@
     font-size: 0.8rem;
 }
 
-.dropdown__dropdownMenuItem:focus {
+.dropdown__dropdownMenuItem:focus-visible {
     outline: var(--primary-light-color) solid 1px;
 }
 
