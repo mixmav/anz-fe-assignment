@@ -14,10 +14,10 @@
 :root {
     --primary-color: #1a3858;
     --primary-light-color: #336fad;
-
     --primary-text-color: #fff;
     --primary-focus-bg-color: #f0faff;
     --primary-active-bg-color: #c3e4ff;
-
     --text-neutral-color: #494949;
+
+    --max-content-width: 1400px;
 }

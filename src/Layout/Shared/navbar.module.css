@@ -1,13 +1,19 @@
 .navbar {
-    background: var(--primary-color);
     border-bottom: solid 4px var(--primary-light-color);
-    color: var(--primary-text-color);
+    background: var(--primary-color);
     padding: 0.5rem 1rem;
+    color: var(--primary-text-color);
+    font-size: 0.8rem;
+    word-spacing: 3px;
+}
+
+.navbar__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    word-spacing: 3px;
-    font-size: 0.8rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--max-content-width);
 }
 
 .navbar__anzLink {
@@ -27,11 +33,4 @@
 
 .navbar__tagline {
     margin-left: 10px;
-}
-
-.navbar__userAvatar {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
 }

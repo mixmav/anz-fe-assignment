@@ -1,11 +1,12 @@
 .button {
-    border: none;
-    padding: 0.2rem 0.4rem;
     display: flex;
+    column-gap: 10px;
     justify-content: center;
-    border-radius: 3px;
-    cursor: pointer;
     align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    padding: 0.2rem 0.4rem;
 }
 
 .button_transparent {
@@ -14,10 +15,16 @@
 }
 
 .button_transparent:focus {
-    outline: var(--primary-light-color) solid 1px;
+    outline: var(--primary-text-color) solid 1px;
 }
 
 .button_focusable[aria-expanded='true'] {
     background-color: var(--primary-text-color);
     color: var(--primary-color) !important;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
 }
