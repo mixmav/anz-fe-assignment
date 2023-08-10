@@ -1,0 +1,9 @@
+.button {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+}

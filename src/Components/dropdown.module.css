@@ -1,0 +1,36 @@
+.dropdown {
+    position: relative;
+}
+
+.dropdown__dropdownMenu {
+    visibility: hidden;
+    will-change: transform;
+    opacity: 0;
+    min-width: 160px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px 0;
+    border-radius: 3px;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background: white;
+    color: var(--neutral-text-color);
+}
+
+.dropdown__dropdownMenu_visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown__dropdownMenuItem {
+    background: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 100%;
+    font-size: 1em;
+    color: var(--primary-color);
+}
