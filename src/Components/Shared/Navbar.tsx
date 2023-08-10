@@ -28,18 +28,19 @@ let Navbar = () => {
                     trigger={
                         <button
                             aria-label="Profile menu"
-                            className={`${componentStyles.button}`}
+                            className={`${componentStyles.button} ${componentStyles.button_transparent} ${componentStyles.button_focusable}`}
                         >
                             <img
                                 className={`${styles.navbar__userAvatar}`}
-                                src="https://api.dicebear.com/6.x/bottts/jpg"
+                                src="https://api.dicebear.com/6.x/initials/svg?seed=JD"
                                 alt="User avatar"
                             />
                             John Doe
                         </button>
                     }
                     menuItems={[
-                        <button>Profile</button>,
+                        <button>Your profile</button>,
+                        <button>Settings</button>,
                         <button>Logout</button>,
                     ]}
                 />

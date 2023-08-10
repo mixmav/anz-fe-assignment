@@ -12,9 +12,13 @@
     border-radius: 3px;
     position: absolute;
     right: 0;
-    top: 110%;
-    background: white;
-    color: var(--neutral-text-color);
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    padding: 0.4rem;
+    top: calc(100% + 3px);
+    background: var(--primary-text-color);
+    color: var(--text-neutral-color);
 }
 
 .dropdown__dropdownMenu_visible {
@@ -23,14 +27,26 @@
 }
 
 .dropdown__dropdownMenuItem {
-    background: #fff;
+    background: var(--primary-text-color);
     cursor: pointer;
     border: none;
+    border-radius: 3px;
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-width: 100%;
-    font-size: 1em;
+    font-size: 0.8rem;
     color: var(--primary-color);
+}
+
+.dropdown__dropdownMenuItem:focus {
+    outline: var(--primary-light-color) solid 1px;
+}
+
+.dropdown__dropdownMenuItem:hover {
+    background: var(--primary-focus-bg-color);
+}
+.dropdown__dropdownMenuItem:active {
+    background: var(--primary-active-bg-color);
 }

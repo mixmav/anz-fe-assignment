@@ -14,6 +14,10 @@
 :root {
     --primary-color: #1a3858;
     --primary-light-color: #336fad;
+
     --primary-text-color: #fff;
-    --neutral-text-color: #0c0a0a;
+    --primary-focus-bg-color: #f0faff;
+    --primary-active-bg-color: #c3e4ff;
+
+    --text-neutral-color: #494949;
 }
