@@ -28,3 +28,40 @@
     width: 30px;
     height: 30px;
 }
+
+.menu {
+    display: flex;
+    row-gap: 0.5rem;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px 0;
+    border-radius: 3px;
+    background: var(--primary-text-color);
+    padding: 0.4rem;
+    min-width: 160px;
+    color: var(--text-neutral-color);
+}
+
+.menu > * {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background: var(--primary-text-color);
+    padding: 0.5rem 1rem;
+    min-width: 100%;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+
+.menu > *:focus-visible {
+    outline: var(--primary-light-color) solid 1px;
+}
+
+.menu > *:hover {
+    background: var(--primary-focus-bg-color);
+}
+.menu > *:active {
+    background: var(--primary-active-bg-color);
+}

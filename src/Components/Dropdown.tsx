@@ -7,6 +7,7 @@
 import { ReactElement, ReactNode, cloneElement } from 'react';
 import useDropdownMenu from 'react-accessible-dropdown-menu-hook';
 import styles from './dropdown.module.css';
+import componentStyles from 'src/Assets/Styles/components.module.css';
 
 interface DropdownProps {
     trigger: ReactElement<HTMLElement>;
@@ -26,8 +27,8 @@ const Dropdown: React.FC<DropdownProps> = ({ trigger, menuItems }) => {
         <div className={`${styles.dropdown}`}>
             {accessibleTrigger}
             <div
-                className={`${styles.dropdown__dropdownMenu} ${
-                    isOpen ? styles.dropdown__dropdownMenu_visible : ''
+                className={`${styles.dropdown__menu} ${componentStyles.menu} ${
+                    isOpen ? styles.dropdown__menu_visible : ''
                 }`}
                 role="menu"
             >
@@ -37,7 +38,6 @@ const Dropdown: React.FC<DropdownProps> = ({ trigger, menuItems }) => {
                         {
                             key: i,
                             ...itemProps[i],
-                            className: styles.dropdown__dropdownMenuItem,
                         }
                     );
 

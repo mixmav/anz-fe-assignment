@@ -1,4 +1,11 @@
-.baseLayout__content {
+.baseContainer {
+    display: flex;
+    justify-content: space-between;
     margin: 0 auto;
     max-width: var(--max-content-width);
+}
+
+.baseContainer__main {
+    flex-grow: 1;
+    padding: 1rem;
 }

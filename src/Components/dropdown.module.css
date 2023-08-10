@@ -2,51 +2,17 @@
     position: relative;
 }
 
-.dropdown__dropdownMenu {
-    display: flex;
+.dropdown__menu {
     position: absolute;
     top: calc(100% + 3px);
     right: 0;
-    row-gap: 0.5rem;
-    flex-direction: column;
+
     visibility: hidden;
     opacity: 0;
-    will-change: transform;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px 0;
-    border-radius: 3px;
-    background: var(--primary-text-color);
-    padding: 0.4rem;
-    min-width: 160px;
-    color: var(--text-neutral-color);
-    text-align: center;
+    will-change: visibility, opacity;
 }
 
-.dropdown__dropdownMenu_visible {
+.dropdown__menu_visible {
     visibility: visible;
     opacity: 1;
-}
-
-.dropdown__dropdownMenuItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    border: none;
-    border-radius: 3px;
-    background: var(--primary-text-color);
-    padding: 0.5rem 1rem;
-    min-width: 100%;
-    color: var(--primary-color);
-    font-size: 0.8rem;
-}
-
-.dropdown__dropdownMenuItem:focus-visible {
-    outline: var(--primary-light-color) solid 1px;
-}
-
-.dropdown__dropdownMenuItem:hover {
-    background: var(--primary-focus-bg-color);
-}
-.dropdown__dropdownMenuItem:active {
-    background: var(--primary-active-bg-color);
 }
