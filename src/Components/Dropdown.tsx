@@ -1,7 +1,8 @@
 /**
  * Accessible dropdown menu
- * * Using (react-accessible-dropdown-menu-hook)
- * * Which handles menu and trigger accessibility attributes
+ * Author: Manav Gadhoke
+ * * Uses react-accessible-dropdown-menu-hook
+ * * to handle menu and trigger accessibility attributes and state
  */
 
 import { ReactElement, ReactNode, cloneElement } from 'react';
@@ -18,32 +19,37 @@ const Dropdown: React.FC<DropdownProps> = ({ trigger, menuItems }) => {
     const { buttonProps, itemProps, isOpen } = useDropdownMenu(
         menuItems.length
     );
+
     const accessibleTrigger = cloneElement(trigger, {
         role: 'button',
         ...buttonProps,
     });
 
     return (
-        <div className={`${styles.dropdown}`}>
+        <div
+            className={`${styles.dropdown} ${
+                isOpen ? styles.dropdown_visible : ''
+            }`}
+        >
             {accessibleTrigger}
-            <div
-                className={`${styles.dropdown__menu} ${componentStyles.menu} ${
-                    isOpen ? styles.dropdown__menu_visible : ''
-                }`}
+            <nav
+                className={`${styles.dropdown__menu} ${componentStyles.menu} ${componentStyles.menu_bold}`}
                 role="menu"
             >
-                {menuItems.map((item, i) => {
-                    const accessibleItem = cloneElement(
-                        menuItems[i] as ReactElement,
-                        {
-                            key: i,
-                            ...itemProps[i],
-                        }
-                    );
+                <ul>
+                    {menuItems.map((item, i) => {
+                        const accessibleItem = cloneElement(
+                            menuItems[i] as ReactElement,
+                            {
+                                ...itemProps[i],
+                                className: `${componentStyles.menu__item}`,
+                            }
+                        );
 
-                    return accessibleItem;
-                })}
-            </div>
+                        return <li key={i}>{accessibleItem}</li>;
+                    })}
+                </ul>
+            </nav>
         </div>
     );
 };

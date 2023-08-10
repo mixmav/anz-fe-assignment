@@ -1,13 +1,13 @@
 import Dropdown from 'src/Components/Dropdown';
 import componentStyles from 'src/Assets/Styles/components.module.css';
-
+import { Icon } from '@iconify/react';
 let ProfileMenu = () => {
     return (
         <Dropdown
             trigger={
                 <button
                     aria-label="Profile menu"
-                    className={`${componentStyles.button} ${componentStyles.button_transparent} ${componentStyles.button_focusable}`}
+                    className={`${componentStyles.button} ${componentStyles.button_transparent} ${componentStyles.button_expandable}`}
                 >
                     <img
                         className={`${componentStyles.avatar}`}
@@ -15,6 +15,7 @@ let ProfileMenu = () => {
                         alt="User avatar"
                     />
                     John Doe
+                    <Icon icon="fa-solid:angle-down" />
                 </button>
             }
             menuItems={[

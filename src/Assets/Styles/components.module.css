@@ -7,6 +7,7 @@
     border: none;
     border-radius: 3px;
     padding: 0.2rem 0.4rem;
+    font-weight: bold;
 }
 
 .button_transparent {
@@ -18,7 +19,7 @@
     outline: var(--primary-text-color) solid 1px;
 }
 
-.button_focusable[aria-expanded='true'] {
+.button_transparent.button_expandable[aria-expanded='true'] {
     background-color: var(--primary-text-color);
     color: var(--primary-color) !important;
 }
@@ -38,12 +39,28 @@
     background: var(--primary-text-color);
     padding: 0.4rem;
     min-width: 160px;
-    color: var(--text-neutral-color);
+    color: var(--primary-color);
+    font-size: 0.8rem;
 }
 
-.menu > * {
+.menu_primary {
+    padding: 0;
+    color: var(--primary-light-color);
+}
+
+.menu_bold {
+    font-weight: bold;
+}
+
+.menu ul,
+.menu ol {
+    list-style: none;
+}
+
+.menu__item {
     display: flex;
-    justify-content: space-between;
+    column-gap: 0.8rem;
+    justify-content: flex-start;
     align-items: center;
     cursor: pointer;
     border: none;
@@ -51,17 +68,33 @@
     background: var(--primary-text-color);
     padding: 0.5rem 1rem;
     min-width: 100%;
-    color: var(--primary-color);
-    font-size: 0.8rem;
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
 }
 
-.menu > *:focus-visible {
+.menu__item svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.menu_xl .menu__item {
+    padding: 1rem 2rem;
+    padding-right: 4rem;
+}
+
+.menu__item_active {
+    background: var(--primary-light-color);
+    color: var(--primary-text-color);
+}
+
+.menu__item:not(.menu__item_active):focus-visible {
     outline: var(--primary-light-color) solid 1px;
 }
 
-.menu > *:hover {
+.menu__item:not(.menu__item_active):hover {
     background: var(--primary-focus-bg-color);
 }
-.menu > *:active {
+.menu__item:not(.menu__item_active):active {
     background: var(--primary-active-bg-color);
 }

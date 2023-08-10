@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Home from 'src/Pages/Home';
+import Home from 'src/Pages/Transactions';
 
 test('renders learn react link', () => {
     render(<Home />);

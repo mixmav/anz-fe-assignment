@@ -5,12 +5,12 @@ import {
 } from 'react-router-dom';
 
 import Base from 'src/Layout/Base';
-import Home from 'src/Pages/Home';
+import Transactions from 'src/Pages/Transactions';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route element={<Base />}>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Transactions />} />
         </Route>
     )
 );
