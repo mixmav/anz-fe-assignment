@@ -24,6 +24,11 @@
     color: var(--primary-color) !important;
 }
 
+.button_transparent.button_expandable[aria-expanded='true']
+    svg[class^='iconify'] {
+    transform: rotate(180deg);
+}
+
 .avatar {
     border-radius: 50%;
     width: 30px;
@@ -67,10 +72,14 @@
     border-radius: 3px;
     background: var(--primary-text-color);
     padding: 0.5rem 1rem;
-    min-width: 100%;
     color: inherit;
     font-weight: inherit;
     font-size: inherit;
+    text-decoration: none;
+}
+
+.menu__item:focus-visible {
+    outline: var(--primary-light-color) solid 1px;
 }
 
 .menu__item svg {
@@ -87,11 +96,9 @@
     background: var(--primary-light-color);
     color: var(--primary-text-color);
 }
-
-.menu__item:not(.menu__item_active):focus-visible {
-    outline: var(--primary-light-color) solid 1px;
+.menu__item_active:focus-visible {
+    outline: var(--text-neutral-color) solid 1px;
 }
-
 .menu__item:not(.menu__item_active):hover {
     background: var(--primary-focus-bg-color);
 }

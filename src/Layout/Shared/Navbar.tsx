@@ -3,7 +3,7 @@ import AnzLogo from 'src/Assets/Img/anz-logo.png';
 import ProfileMenu from 'src/Layout/Shared/ProfileMenu';
 import styles from './navbar.module.css';
 
-let Navbar = () => {
+const Navbar = () => {
     return (
         <nav className={`${styles.navbar}`} role="navigation">
             <div className={`${styles.navbar__content}`}>

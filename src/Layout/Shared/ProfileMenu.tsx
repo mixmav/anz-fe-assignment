@@ -1,7 +1,9 @@
 import Dropdown from 'src/Components/Dropdown';
 import componentStyles from 'src/Assets/Styles/components.module.css';
 import { Icon } from '@iconify/react';
-let ProfileMenu = () => {
+import { Link } from 'react-router-dom';
+
+const ProfileMenu = () => {
     return (
         <Dropdown
             trigger={
@@ -19,9 +21,9 @@ let ProfileMenu = () => {
                 </button>
             }
             menuItems={[
-                <button>Your profile</button>,
-                <button>Settings</button>,
-                <button>Logout</button>,
+                <Link to="/">Your profile</Link>,
+                <Link to="/">Settings</Link>,
+                <Link to="/">Logout</Link>,
             ]}
         />
     );

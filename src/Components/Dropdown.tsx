@@ -32,7 +32,7 @@ const Dropdown: React.FC<DropdownProps> = ({ trigger, menuItems }) => {
             }`}
         >
             {accessibleTrigger}
-            <nav
+            <div
                 className={`${styles.dropdown__menu} ${componentStyles.menu} ${componentStyles.menu_bold}`}
                 role="menu"
             >
@@ -49,7 +49,7 @@ const Dropdown: React.FC<DropdownProps> = ({ trigger, menuItems }) => {
                         return <li key={i}>{accessibleItem}</li>;
                     })}
                 </ul>
-            </nav>
+            </div>
         </div>
     );
 };

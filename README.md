@@ -1,16 +1,18 @@
 # ANZ Frontend Engineer Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and then ejected using `npm run eject`. It is also hosted on [Vercel](https://anz-fe-assignment.vercel.app/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and then ejected using `npm run eject`.
+
+[Live demo](https://anz-fe-assignment.vercel.app/) (hosted on [Vercel](https://vercel.com/))
 
 ## Design Decisions
 
--   Typically, I'd use TailwindCSS for styling, but I decided to use plain CSS for this project to demonstrate my understanding of CSS.
+-   Typically, I'd use TailwindCSS, but I've used vanilla CSS for this project to demonstrate my understanding of CSS.
 
--   TypeScript was used to ensure type safety and to make the code more reliable.
+-   TypeScript was used to ensure type safety and to catch errors early.
 
--   The CSS adheres to the [BEM](http://getbem.com/) methodology to make it easier to maintain and scale.
+-   The CSS uses a modified version of the [BEM](http://getbem.com/) methodology for naming conventions, alonsgide CSS modules to prevent conflicts, and make it easier to maintain and scale.
 
--   Accessibility was considered when writing every piece of the code. For example. ARIA attributes, semantic HTML, and focus states for keyboard navigation are all used in conjunction.
+-   Every component was designed with accessibility in mind. For example. ARIA attributes, semantic HTML tags, and focus states for keyboard navigation are all considered.
 
 ## Project Structure
 

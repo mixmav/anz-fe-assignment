@@ -3,6 +3,7 @@ import Navbar from 'src/Layout/Shared/Navbar';
 import styles from './base.module.css';
 import componentStyles from 'src/Assets/Styles/components.module.css';
 import { Icon } from '@iconify/react';
+import { Link } from 'react-router-dom';
 const Base = () => {
     return (
         <>
@@ -13,30 +14,40 @@ const Base = () => {
                 >
                     <ul>
                         <li>
-                            <button className={`${componentStyles.menu__item}`}>
+                            <Link
+                                to="/"
+                                className={`${componentStyles.menu__item}`}
+                            >
                                 <Icon icon="fa-solid:home" />
                                 Summary
-                            </button>
+                            </Link>
                         </li>
                         <li>
-                            <button className={`${componentStyles.menu__item}`}>
+                            <Link
+                                to="/"
+                                className={`${componentStyles.menu__item}`}
+                            >
                                 <Icon icon="fa6-solid:heart-pulse" />
                                 Financials
-                            </button>
+                            </Link>
                         </li>
                         <li>
-                            <button className={`${componentStyles.menu__item}`}>
+                            <Link
+                                to="/"
+                                className={`${componentStyles.menu__item}`}
+                            >
                                 <Icon icon="fa6-solid:scale-balanced" />
                                 Balances
-                            </button>
+                            </Link>
                         </li>
                         <li>
-                            <button
+                            <Link
+                                to="/"
                                 className={`${componentStyles.menu__item} ${componentStyles.menu__item_active}`}
                             >
                                 <Icon icon="fa6-solid:right-left" />
                                 Transactions
-                            </button>
+                            </Link>
                         </li>
                     </ul>
                 </nav>

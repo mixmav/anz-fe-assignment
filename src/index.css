@@ -20,4 +20,5 @@
     --text-neutral-color: #494949;
 
     --max-content-width: 1400px;
+    --z-index-component-dropdown: 10;
 }

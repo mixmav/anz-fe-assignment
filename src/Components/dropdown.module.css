@@ -1,9 +1,6 @@
 .dropdown {
     position: relative;
-}
-
-.dropdown_visible svg {
-    transform: rotate(180deg);
+    z-index: var(--z-index-component-dropdown);
 }
 
 .dropdown__menu {
