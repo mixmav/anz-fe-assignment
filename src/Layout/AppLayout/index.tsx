@@ -1,10 +1,11 @@
 import { Outlet } from 'react-router-dom';
 import MainHeader from './MainHeader';
 import { Icon } from '@iconify/react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import styles from './app_layout.module.css';
 import componentStyles from 'src/Components/Styles/components.module.css';
+
 const AppLayout = () => {
     return (
         <>
@@ -15,40 +16,64 @@ const AppLayout = () => {
                 >
                     <ul>
                         <li>
-                            <Link
+                            <NavLink
                                 to="/"
-                                className={`${componentStyles.menu__item}`}
+                                className={({ isActive }) =>
+                                    `${componentStyles.menu__item} ${
+                                        isActive
+                                            ? componentStyles.menu__item_active
+                                            : ''
+                                    }`
+                                }
                             >
                                 <Icon icon="fa-solid:home" />
                                 Summary
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link
+                            <NavLink
                                 to="/"
-                                className={`${componentStyles.menu__item}`}
+                                className={({ isActive }) =>
+                                    `${componentStyles.menu__item} ${
+                                        isActive
+                                            ? componentStyles.menu__item_active
+                                            : ''
+                                    }`
+                                }
                             >
                                 <Icon icon="fa6-solid:heart-pulse" />
                                 Financials
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link
+                            <NavLink
                                 to="/"
-                                className={`${componentStyles.menu__item}`}
+                                className={({ isActive }) =>
+                                    `${componentStyles.menu__item} ${
+                                        isActive
+                                            ? componentStyles.menu__item_active
+                                            : ''
+                                    }`
+                                }
                             >
                                 <Icon icon="fa6-solid:scale-balanced" />
                                 Balances
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link
-                                to="/"
-                                className={`${componentStyles.menu__item} ${componentStyles.menu__item_active}`}
+                            <NavLink
+                                to="/transactions"
+                                className={({ isActive }) =>
+                                    `${componentStyles.menu__item} ${
+                                        isActive
+                                            ? componentStyles.menu__item_active
+                                            : ''
+                                    }`
+                                }
                             >
                                 <Icon icon="fa6-solid:right-left" />
                                 Transactions
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>

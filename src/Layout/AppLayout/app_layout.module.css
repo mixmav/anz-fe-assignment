@@ -3,10 +3,12 @@
     justify-content: space-between;
     align-items: flex-start;
     margin: 0 auto;
+    padding: 1rem;
     max-width: var(--max-content-width);
 }
 
 .appLayout__main {
     flex-grow: 1;
-    padding: 1rem;
+    padding-left: 1rem;
+    padding-left: 1rem;
 }

@@ -6,9 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Overview
 
--   Typically, I'd use TailwindCSS, but I've used vanilla CSS for this project to demonstrate my understanding of CSS.
-
+-   Only the `/transactions` route is implemented. The `/` route simply redirects to `/transactions`.
 -   TypeScript is used to ensure type safety and to catch errors early.
+-   Typically, I'd use TailwindCSS, but I've used vanilla CSS for this project to demonstrate my understanding of CSS.
 
 -   The CSS uses a modified version of the [BEM](http://getbem.com/) methodology (documented [here](#css-naming-convention)) for naming conventions, alonsgide CSS modules to prevent conflicts, and make it easier to maintain and scale.
 
@@ -20,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     -   Accessible alternatives to convey information that's displayed using the `canvas` element
     -   Reduced motion for animations when requested by the user
     -   Responsive design for mobile and desktop
-    -   Color contrast ratio of at least 4.5:1 for text and images of text
+    -   Color contrast ratio of at least 4.5:1 for text and interactive elements
 
 ## CSS Naming Convention
 

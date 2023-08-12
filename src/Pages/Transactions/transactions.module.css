@@ -1,11 +1,9 @@
-.chartjsConatiner {
+.chartConatiner {
     position: relative;
     margin: 0 auto;
-    /* width: 90vw; */
-    /* height: 80vh; */
-    overflow: auto;
-    canvas {
-        width: 100%;
-        height: 100%;
-    }
+    /* width: 600px; */
+    /* height: auto; */
+    /* overflow: auto; */
+}
+.chartConatiner:nth-child(odd) {
 }

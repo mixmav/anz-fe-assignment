@@ -47,7 +47,9 @@
     color: var(--primary-color);
     font-size: 0.8rem;
 }
-
+.menu_xl {
+    min-width: 200px;
+}
 .menu_primary {
     padding: 0;
     color: var(--primary-light-color);
