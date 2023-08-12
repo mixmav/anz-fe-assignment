@@ -1,0 +1,109 @@
+.button {
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    padding: 0.2rem 0.4rem;
+    font-weight: bold;
+}
+
+.button_transparent {
+    background-color: transparent;
+    color: var(--primary-text-color);
+}
+
+.button_transparent:focus-visible {
+    outline: var(--primary-text-color) solid 1px;
+}
+
+.button_transparent.button_expandable[aria-expanded='true'] {
+    background-color: var(--primary-text-color);
+    color: var(--primary-color) !important;
+}
+
+.button_transparent.button_expandable[aria-expanded='true']
+    svg[class^='iconify'] {
+    transform: rotate(180deg);
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.menu {
+    display: flex;
+    row-gap: 0.5rem;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px 0;
+    border-radius: 3px;
+    background: var(--primary-text-color);
+    padding: 0.4rem;
+    min-width: 160px;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+}
+.menu_xl {
+    min-width: 200px;
+}
+.menu_primary {
+    padding: 0;
+    color: var(--primary-light-color);
+}
+
+.menu_bold {
+    font-weight: bold;
+}
+
+.menu ul,
+.menu ol {
+    list-style: none;
+}
+
+.menu__item {
+    display: flex;
+    column-gap: 0.8rem;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background: var(--primary-text-color);
+    padding: 0.5rem 1rem;
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    text-decoration: none;
+}
+
+.menu__item:focus-visible {
+    outline: var(--primary-light-color) solid 1px;
+}
+
+.menu__item svg {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.menu_xl .menu__item {
+    padding: 1rem 2rem;
+    padding-right: 4rem;
+}
+
+.menu__item_active {
+    background: var(--primary-light-color);
+    color: var(--primary-text-color);
+}
+.menu__item_active:focus-visible {
+    outline: var(--text-neutral-color) solid 1px;
+}
+.menu__item:not(.menu__item_active):hover {
+    background: var(--primary-focus-bg-color);
+}
+.menu__item:not(.menu__item_active):active {
+    background: var(--primary-active-bg-color);
+}

@@ -1,0 +1,9 @@
+.chartConatiner {
+    position: relative;
+    margin: 0 auto;
+    /* width: 600px; */
+    /* height: auto; */
+    /* overflow: auto; */
+}
+.chartConatiner:nth-child(odd) {
+}

@@ -1,16 +1,28 @@
 # ANZ Frontend Engineer Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and then ejected using `npm run eject`. It is also hosted on [Vercel](https://anz-fe-assignment.vercel.app/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and then ejected using `npm run eject`.
 
-## Design Decisions
+[Live demo](https://anz-fe-assignment.vercel.app/) (hosted on [Vercel](https://vercel.com/))
 
--   Typically, I'd use TailwindCSS for styling, but I decided to use plain CSS for this project to demonstrate my understanding of CSS.
+## Overview
 
--   TypeScript was used to ensure type safety and to make the code more reliable.
+-   Only the `/transactions` route is implemented. The `/` route simply redirects to `/transactions`.
+-   TypeScript is used to ensure type safety and to catch errors early.
+-   Typically, I'd use TailwindCSS, but I've used vanilla CSS for this project to demonstrate my understanding of CSS.
 
--   The CSS adheres to the [BEM](http://getbem.com/) methodology to make it easier to maintain and scale.
+-   The CSS uses a modified version of the [BEM](http://getbem.com/) methodology (documented [here](#css-naming-convention)) for naming conventions, alonsgide CSS modules to prevent conflicts, and make it easier to maintain and scale.
 
--   Accessibility was considered when writing every piece of the code. For example. ARIA attributes, semantic HTML, and focus states for keyboard navigation are all used in conjunction.
+-   Every component was designed with accessibility in mind. This includes:
+    -   ARIA attributes where appropriate
+    -   Semantic HTML tags where appropriate
+    -   Focus states for keyboard navigation
+    -   `alt` attributes for images
+    -   Accessible alternatives to convey information that's displayed using the `canvas` element
+    -   Reduced motion for animations when requested by the user
+    -   Responsive design for mobile and desktop
+    -   Color contrast ratio of at least 4.5:1 for text and interactive elements
+
+## CSS Naming Convention
 
 ## Project Structure
 

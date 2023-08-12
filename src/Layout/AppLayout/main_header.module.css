@@ -1,0 +1,40 @@
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: var(--z-index-main-header);
+    border-bottom: solid 4px var(--primary-light-color);
+    background: var(--primary-color);
+    padding: 0.5rem 1rem;
+    color: var(--primary-text-color);
+    font-size: 0.8rem;
+    word-spacing: 3px;
+}
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--max-content-width);
+}
+
+.header__anzLink {
+    display: inline-block;
+}
+
+.header__anzLogo {
+    width: 100px;
+    height: auto;
+}
+
+.header__item_contentCentered {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__tagline {
+    margin-left: 10px;
+}

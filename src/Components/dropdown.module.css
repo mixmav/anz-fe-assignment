@@ -1,0 +1,18 @@
+.dropdown {
+    position: relative;
+    z-index: var(--z-index-component-dropdown);
+}
+
+.dropdown__menu {
+    position: absolute;
+    top: calc(100% + 3px);
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    will-change: visibility, opacity;
+}
+
+.dropdown_visible .dropdown__menu {
+    visibility: visible;
+    opacity: 1;
+}
