@@ -40,6 +40,13 @@ export const options = {
     },
 };
 const Transactions = () => {
+    fetch('/api/sample_data.csv')
+        .then((response) => {
+            console.log(response);
+        })
+        .then((data) => {
+            console.log(data);
+        });
     return (
         <>
             <h1>Transactions</h1>

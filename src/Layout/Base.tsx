@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import Navbar from 'src/Layout/Shared/Navbar';
+import Header from 'src/Layout/Shared/Header';
 import styles from './base.module.css';
 import componentStyles from 'src/Assets/Styles/components.module.css';
 import { Icon } from '@iconify/react';
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Base = () => {
     return (
         <>
-            <Navbar />
+            <Header />
             <div className={styles.baseContainer}>
                 <nav
                     className={`${componentStyles.menu} ${componentStyles.menu_primary} ${componentStyles.menu_bold} ${componentStyles.menu_xl}`}

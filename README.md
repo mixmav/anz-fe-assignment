@@ -4,15 +4,25 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [Live demo](https://anz-fe-assignment.vercel.app/) (hosted on [Vercel](https://vercel.com/))
 
-## Design Decisions
+## Overview
 
 -   Typically, I'd use TailwindCSS, but I've used vanilla CSS for this project to demonstrate my understanding of CSS.
 
--   TypeScript was used to ensure type safety and to catch errors early.
+-   TypeScript is used to ensure type safety and to catch errors early.
 
--   The CSS uses a modified version of the [BEM](http://getbem.com/) methodology for naming conventions, alonsgide CSS modules to prevent conflicts, and make it easier to maintain and scale.
+-   The CSS uses a modified version of the [BEM](http://getbem.com/) methodology (documented [here](#css-naming-convention)) for naming conventions, alonsgide CSS modules to prevent conflicts, and make it easier to maintain and scale.
 
--   Every component was designed with accessibility in mind. For example. ARIA attributes, semantic HTML tags, and focus states for keyboard navigation are all considered.
+-   Every component was designed with accessibility in mind. This includes:
+    -   ARIA attributes where appropriate
+    -   Semantic HTML tags where appropriate
+    -   Focus states for keyboard navigation
+    -   `alt` attributes for images
+    -   Accessible alternatives to convey information that's displayed using the `canvas` element
+    -   Reduced motion for animations when requested by the user
+    -   Responsive design for mobile and desktop
+    -   Color contrast ratio of at least 4.5:1 for text and images of text
+
+## CSS Naming Convention
 
 ## Project Structure
 
