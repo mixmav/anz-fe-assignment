@@ -1,4 +1,4 @@
-.navbar {
+.header {
     border-bottom: solid 4px var(--primary-light-color);
     background: var(--primary-color);
     padding: 0.5rem 1rem;
@@ -7,7 +7,7 @@
     word-spacing: 3px;
 }
 
-.navbar__content {
+.header__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,21 +16,21 @@
     max-width: var(--max-content-width);
 }
 
-.navbar__anzLink {
+.header__anzLink {
     display: inline-block;
 }
 
-.navbar__anzLogo {
+.header__anzLogo {
     width: 100px;
     height: auto;
 }
 
-.navbar__item_contentCentered {
+.header__item_contentCentered {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbar__tagline {
+.header__tagline {
     margin-left: 10px;
 }

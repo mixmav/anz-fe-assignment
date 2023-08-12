@@ -1,14 +1,15 @@
 import { Outlet } from 'react-router-dom';
-import Header from 'src/Layout/Shared/Header';
-import styles from './base.module.css';
-import componentStyles from 'src/Assets/Styles/components.module.css';
+import MainHeader from './MainHeader';
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
-const Base = () => {
+
+import styles from './app_layout.module.css';
+import componentStyles from 'src/Components/Styles/components.module.css';
+const AppLayout = () => {
     return (
         <>
-            <Header />
-            <div className={styles.baseContainer}>
+            <MainHeader />
+            <div className={styles.appLayout}>
                 <nav
                     className={`${componentStyles.menu} ${componentStyles.menu_primary} ${componentStyles.menu_bold} ${componentStyles.menu_xl}`}
                 >
@@ -52,7 +53,7 @@ const Base = () => {
                     </ul>
                 </nav>
 
-                <main className={`${styles.baseContainer__main}`}>
+                <main className={`${styles.appLayout__main}`}>
                     <Outlet />
                 </main>
             </div>
@@ -60,4 +61,4 @@ const Base = () => {
     );
 };
 
-export default Base;
+export default AppLayout;

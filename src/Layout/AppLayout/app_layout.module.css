@@ -1,4 +1,4 @@
-.baseContainer {
+.appLayout {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -6,7 +6,7 @@
     max-width: var(--max-content-width);
 }
 
-.baseContainer__main {
+.appLayout__main {
     flex-grow: 1;
     padding: 1rem;
 }

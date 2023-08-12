@@ -1,25 +1,25 @@
 import { Link } from 'react-router-dom';
 import AnzLogo from 'src/Assets/Img/anz-logo.png';
 import ProfileMenu from 'src/Layout/Shared/ProfileMenu';
-import styles from './header.module.css';
+import styles from './main_header.module.css';
 
-const Navbar = () => {
+const MainHeader = () => {
     return (
-        <nav className={`${styles.navbar}`} role="navigation">
-            <div className={`${styles.navbar__content}`}>
-                <div className={`${styles.navbar__item_contentCentered}`}>
+        <header className={`${styles.header}`}>
+            <div className={`${styles.header__content}`}>
+                <div className={`${styles.header__item_contentCentered}`}>
                     <Link
                         to="/"
-                        className={`${styles.navbar__anzLink}`}
+                        className={`${styles.header__anzLink}`}
                         aria-label="ANZ Home"
                     >
                         <img
-                            className={`${styles.navbar__anzLogo}`}
+                            className={`${styles.header__anzLogo}`}
                             src={AnzLogo}
                             alt="ANZ Logo"
                         />
                     </Link>
-                    <span className={`${styles.navbar__tagline}`}>
+                    <span className={`${styles.header__tagline}`}>
                         ANZ Institutional Insights
                     </span>
                 </div>
@@ -27,8 +27,8 @@ const Navbar = () => {
                     <ProfileMenu />
                 </div>
             </div>
-        </nav>
+        </header>
     );
 };
 
-export default Navbar;
+export default MainHeader;
