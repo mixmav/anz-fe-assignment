@@ -20,5 +20,8 @@
     --text-neutral-color: #494949;
 
     --max-content-width: 1400px;
-    --z-index-component-dropdown: 10;
+
+    --z-index-main-header: 99;
+    --z-index-main-content: 98;
+    --z-index-component-dropdown: 100;
 }

@@ -8,7 +8,9 @@
 }
 
 .appLayout__main {
+    position: relative;
     flex-grow: 1;
+    z-index: var(--z-index-main-content);
     padding-left: 1rem;
     padding-left: 1rem;
 }

@@ -18,6 +18,7 @@ import parseAndTransformCSV from './parseAndTransformCSV';
 import { useEffect, useState } from 'react';
 import CashInflowChart from './CashInflowChart';
 import CashOutflowChart from './CashOutflowChart';
+import { Chart } from 'chart.js/dist';
 
 ChartJS.register(
     LinearScale,
@@ -32,7 +33,7 @@ ChartJS.register(
     BarController
 );
 
-export const options: ChartOptions = {
+export const defaultOptions: ChartOptions = {
     responsive: true,
     plugins: {
         legend: {
@@ -41,50 +42,75 @@ export const options: ChartOptions = {
         },
     },
 };
+const defaultChartData: ChartData = {
+    labels: [],
+    datasets: [
+        {
+            type: 'bar' as const,
+            label: 'Dataset 2',
+            backgroundColor: '#3361BB',
+            data: [],
+            borderColor: 'white',
+            borderWidth: 2,
+        },
+        {
+            type: 'line' as const,
+            label: 'Dataset 1',
+            borderColor: '#494949',
+            backgroundColor: '#494949',
+            borderWidth: 2,
+            data: [],
+        },
+    ],
+};
 const Transactions = () => {
-    const [data, setData] = useState<ChartData>({
-        labels: [],
-        datasets: [
-            {
-                type: 'bar' as const,
-                label: 'Dataset 2',
-                backgroundColor: '#3361BB',
-                data: [],
-                borderColor: 'white',
-                borderWidth: 2,
-            },
-            {
-                type: 'line' as const,
-                label: 'Dataset 1',
-                borderColor: '#494949',
-                borderWidth: 2,
-                fill: false,
-                data: [],
-            },
-        ],
-    });
+    const [inflowData, setInflowData] = useState<ChartData | null>(null);
+    const [outflowData, setOutflowData] = useState<ChartData | null>(null);
 
     useEffect(() => {
         fetch('/api/sample_data.csv')
             .then((response) => response.text())
             .then((csvText) => {
-                const { months, cashInflow2023, cashInflow2022 } =
-                    parseAndTransformCSV(csvText);
+                const {
+                    months,
+                    cashInflow2023,
+                    cashInflow2022,
+                    cashOutflow2022,
+                    cashOutflow2023,
+                } = parseAndTransformCSV(csvText);
 
-                setData((prev) => ({
-                    ...prev,
+                setInflowData(() => ({
+                    ...defaultChartData,
                     labels: months,
                     datasets: [
                         {
-                            ...prev.datasets[0],
+                            ...defaultChartData.datasets[0],
                             label: 'Cash Inflow 2023',
                             data: cashInflow2023,
                             order: 2,
                         },
                         {
-                            ...prev.datasets[1],
+                            ...defaultChartData.datasets[1],
                             label: 'Cash Inflow 2022',
                             data: cashInflow2022,
+                            order: 1,
+                        },
+                    ],
+                }));
+                setOutflowData(() => ({
+                    ...defaultChartData,
+                    labels: months,
+                    datasets: [
+                        {
+                            ...defaultChartData.datasets[0],
+                            label: 'Cash Inflow 2023',
+                            data: cashOutflow2023,
+                            order: 2,
+                        },
+                        {
+                            ...defaultChartData.datasets[1],
+                            label: 'Cash Inflow 2022',
+                            data: cashOutflow2022,
                             order: 1,
                         },
                     ],
@@ -97,8 +123,8 @@ const Transactions = () => {
     return (
         <>
             <h1>Transactions</h1>
-            <CashInflowChart data={data} />
-            <CashOutflowChart data={data} />
+            {inflowData !== null && <CashInflowChart data={inflowData} />}
+            {outflowData !== null && <CashOutflowChart data={outflowData} />}
         </>
     );
 };

@@ -1,15 +1,16 @@
 import React from 'react';
 import { Chart } from 'react-chartjs-2';
 import styles from './transactions.module.css';
-import { options } from './index';
+import { defaultOptions } from './index';
+import { ChartData } from 'chart.js';
 
-const CashInflowChart: React.FC<{ data: any }> = ({ data }) => {
+const CashInflowChart: React.FC<{ data: ChartData }> = ({ data }) => {
     return (
         <>
             <div className={`${styles.chartConatiner}`}>
                 <Chart
                     type="bar"
-                    options={options}
+                    options={defaultOptions}
                     data={data}
                     fallbackContent={<h1>Hi</h1>}
                 ></Chart>

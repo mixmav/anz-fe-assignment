@@ -1,4 +1,8 @@
 .header {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: var(--z-index-main-header);
     border-bottom: solid 4px var(--primary-light-color);
     background: var(--primary-color);
     padding: 0.5rem 1rem;
