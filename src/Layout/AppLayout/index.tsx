@@ -86,6 +86,10 @@ const AppLayout = () => {
                     </main>
                 </div>
             </div>
+
+            <footer className={styles.appLayout__footer}>
+                <a href="https://mixmav.me">This is a footer</a>
+            </footer>
         </>
     );
 };

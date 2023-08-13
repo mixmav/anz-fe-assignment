@@ -23,15 +23,16 @@ const parseAndTransformCSV = (csvText: string) => {
         accounts.push(currentAccount);
     }
 
-    // Transpose to convert rows to columns
+    // Transpose to convert rows into columns
     let transpose = (matrix: string[][]): string[][] => {
         return matrix[0].map((_: string, colIndex: number) =>
             matrix.map((row: string[]) => row[colIndex])
         );
     };
+
     const columns = transpose(accounts[0]);
 
-    const months = columns[0].slice(1).slice(0, -1); // Exclude header and account name
+    const months = columns[0].slice(1).slice(0, -1); // Exclude header and sum
     const cashInflow2023 = columns[1].slice(1).slice(0, -1).map(Number); // cast to number;
     const cashOutflow2023 = columns[2].slice(1).slice(0, -1).map(Number);
     const cashInflow2022 = columns[3].slice(1).slice(0, -1).map(Number);
@@ -44,6 +45,8 @@ const parseAndTransformCSV = (csvText: string) => {
         cashInflow2022,
         cashOutflow2022,
     };
+
+    // labels: months, (accounts = [{}]);
 };
 
 export default parseAndTransformCSV;

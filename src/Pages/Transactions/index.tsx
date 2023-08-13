@@ -128,7 +128,7 @@ const Transactions = () => {
             });
     }, []);
     return (
-        <>
+        <section>
             <h1>Transactions</h1>
 
             <label
@@ -146,11 +146,10 @@ const Transactions = () => {
                     <option value="1">Account 1</option>
                     <option value="2">Account 2</option>
                 </select>
-                <p>Selected account: {selectedAccount}</p>
             </label>
             {inflowData !== null && <CashInflowChart data={inflowData} />}
             {outflowData !== null && <CashOutflowChart data={outflowData} />}
-        </>
+        </section>
     );
 };
 
