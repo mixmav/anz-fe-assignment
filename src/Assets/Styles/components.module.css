@@ -4,10 +4,20 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    outline-offset: 2px;
     border: none;
-    border-radius: var(--border-radius, 3px);
+    border-radius: var(--border-radius);
     padding: 0.2rem 0.4rem;
     font-weight: bold;
+}
+
+.button_primary {
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+}
+
+.button_primary:focus-visible {
+    outline: var(--primary-light-color) solid 2px;
 }
 
 .button_transparent {
@@ -16,7 +26,7 @@
 }
 
 .button_transparent:focus-visible {
-    outline: var(--primary-text-color) solid 1px;
+    outline: var(--primary-text-color) solid 2px;
 }
 
 .button_transparent.button_expandable[aria-expanded='true'] {
@@ -36,6 +46,7 @@
 }
 
 .formSelect {
+    outline-offset: 2px;
     box-shadow: var(--box-shadow-generic);
     border: none;
     padding: 0.2rem 0.8rem;
@@ -43,7 +54,7 @@
 }
 
 .formSelect:focus-visible {
-    outline: var(--primary-color) solid 1px;
+    outline: var(--primary-color) solid 2px;
 }
 
 .avatar {
@@ -54,7 +65,7 @@
 
 .menu {
     box-shadow: var(--box-shadow-card);
-    border-radius: var(--border-radius, 3px);
+    border-radius: var(--border-radius);
     background: var(--primary-text-color);
     padding: 0.4rem;
     width: 160px;
@@ -84,8 +95,9 @@
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
+    outline-offset: 2px;
     border: none;
-    border-radius: var(--border-radius, 3px);
+    border-radius: var(--border-radius);
     background: var(--primary-text-color);
     padding: 0.5rem 1rem;
     color: inherit;
@@ -95,7 +107,7 @@
 }
 
 .menu__item:focus-visible {
-    outline: var(--text-neutral-color) solid 1px;
+    outline: var(--text-neutral-color) solid 2px;
 }
 
 .menu__item svg {
@@ -112,9 +124,7 @@
     background: var(--primary-light-color);
     color: var(--primary-text-color);
 }
-.menu__item_active:focus-visible {
-    outline: var(--text-neutral-color) solid 1px;
-}
+
 .menu__item:not(.menu__item_active):hover {
     background: var(--primary-focus-bg-color);
 }

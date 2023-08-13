@@ -7,7 +7,6 @@ import {
     LineElement,
     Legend,
     Tooltip,
-    Title,
     LineController,
     BarController,
 } from 'chart.js';
@@ -16,7 +15,10 @@ import CashInfowChart from './CashInflowChart';
 import CashOutfowChart from './CashOutflowChart';
 import { AccountsContextProvider } from 'src/Context/AccountsContext';
 import AccountSelector from './AccountSelector';
+import { customCanvasBackgroundColor } from './util/chartDefaults';
 // import allyLegendPlugin from 'chartjs-plugin-a11y-legend';
+// Doesn't work with mixed charts unfortunately, will submit a
+// PR to the repo to fix this.
 
 ChartJS.register(
     LinearScale,
@@ -25,8 +27,8 @@ ChartJS.register(
     PointElement,
     LineElement,
     Legend,
+    customCanvasBackgroundColor,
     Tooltip,
-    Title,
     LineController,
     BarController
     // allyLegendPlugin

@@ -9,45 +9,36 @@ const CashOutflowChart = () => {
     const { selectedAccount, parsedAccountData } = useAccountsContext();
     const [augmentedChartData, setAugmentedChartData] =
         useState(defaultChartData);
-
+    const [augmentedChartOptions, setAugmentedChartOptions] =
+        useState(defaultOptions);
     useEffect(() => {
-        if (parsedAccountData && selectedAccount > 0) {
-            const months = parsedAccountData[selectedAccount - 1].months;
-            const years = parsedAccountData[selectedAccount - 1].years;
-            const data = parsedAccountData[selectedAccount - 1].data;
-            setAugmentedChartData(() => {
-                return {
-                    ...defaultChartData,
-                    labels: months,
-                    datasets: [
-                        {
-                            ...defaultChartData.datasets[0],
-                            label: `Cash Outflow ${years[0]}`,
-                            data: data[`cashOutflow${years[0]}`],
-                            backgroundColor: '#FA7532',
-                            borderColor: '#FA7532',
-                        },
-                        {
-                            ...defaultChartData.datasets[1],
-                            label: `Cash Outflow ${years[1]}`,
-                            data: data[`cashOutflow${years[1]}`],
-                            borderColor: '#FFBD20',
-                            backgroundColor: '#FFBD20',
-                        },
-                    ],
-                };
-            });
-        } else if (parsedAccountData && selectedAccount === 0) {
-            const toAddYear1: number[][] = [];
-            const toAddYear2: number[][] = [];
-            parsedAccountData.forEach((account) => {
-                toAddYear1.push(account.data[`cashOutflow${account.years[0]}`]);
-                toAddYear2.push(account.data[`cashOutflow${account.years[1]}`]);
-            });
-
+        if (parsedAccountData) {
             const months = parsedAccountData[0].months;
             const years = parsedAccountData[0].years;
-            const data = parsedAccountData[0].data;
+            let data: [number[], number[]] = [[], []];
+            if (selectedAccount > 0) {
+                const allData = parsedAccountData[selectedAccount - 1].data;
+                data = [
+                    allData[`cashOutflow${years[0]}`],
+                    allData[`cashOutflow${years[1]}`],
+                ];
+            } else if (selectedAccount === 0) {
+                // ALL Accounts combined
+                const toAddYear1: number[][] = [];
+                const toAddYear2: number[][] = [];
+                parsedAccountData.forEach((account) => {
+                    toAddYear1.push(
+                        account.data[`cashOutflow${account.years[0]}`]
+                    );
+                    toAddYear2.push(
+                        account.data[`cashOutflow${account.years[1]}`]
+                    );
+                });
+                data = [
+                    sumArraysOfArrays(toAddYear1),
+                    sumArraysOfArrays(toAddYear2),
+                ];
+            }
             setAugmentedChartData(() => {
                 return {
                     ...defaultChartData,
@@ -56,14 +47,14 @@ const CashOutflowChart = () => {
                         {
                             ...defaultChartData.datasets[0],
                             label: `Cash Outflow ${years[0]}`,
-                            data: sumArraysOfArrays(toAddYear1),
+                            data: data[0],
                             backgroundColor: '#FA7532',
                             borderColor: '#FA7532',
                         },
                         {
                             ...defaultChartData.datasets[1],
                             label: `Cash Outflow ${years[1]}`,
-                            data: sumArraysOfArrays(toAddYear2),
+                            data: data[1],
                             borderColor: '#FFBD20',
                             backgroundColor: '#FFBD20',
                         },
@@ -72,17 +63,30 @@ const CashOutflowChart = () => {
             });
         }
     }, [parsedAccountData, selectedAccount]);
+
+    useEffect(() => {
+        setAugmentedChartOptions(() => {
+            return {
+                ...defaultOptions,
+                scales: {
+                    ...defaultOptions.scales,
+                    x: {
+                        position: 'top' as const,
+                    },
+                },
+            };
+        });
+    }, []);
     return (
-        <>
-            <div className={`${styles.chartCard}`}>
-                <Chart
-                    type="bar"
-                    options={defaultOptions}
-                    data={augmentedChartData}
-                    fallbackContent={<h1>Hi</h1>}
-                ></Chart>
-            </div>
-        </>
+        <section className={`${styles.chartCard}`}>
+            <h2 className={`${styles.chartCard__chartTitle}`}>Cash Outflow</h2>
+            <Chart
+                type="bar"
+                options={augmentedChartOptions}
+                data={augmentedChartData}
+                fallbackContent={<h1>Hi</h1>}
+            ></Chart>
+        </section>
     );
 };
 

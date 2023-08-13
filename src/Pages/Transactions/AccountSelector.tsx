@@ -25,6 +25,8 @@ const AccountSelector = () => {
                 return;
             })
             .catch((error) => {
+                // Would typically log to an error logging service like Sentry
+                // TODO display a user friendly error message
                 console.error('Error fetching or parsing CSV:', error);
             });
     }, [setParsedAccountData]);

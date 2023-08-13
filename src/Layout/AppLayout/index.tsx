@@ -2,7 +2,8 @@ import { Outlet } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import { NavLink } from 'react-router-dom';
 
-import MainHeader from './MainHeader';
+import MainHeader from 'src/Layout/Shared/MainHeader';
+import SkipToContentLink from 'src/Layout/Shared/SkipToContentLink';
 // import ProfileMenu from 'src/Layout/Shared/ProfileMenu';
 import styles from './app_layout.module.css';
 import componentStyles from 'src/Assets/Styles/components.module.css';
@@ -10,6 +11,9 @@ import componentStyles from 'src/Assets/Styles/components.module.css';
 const AppLayout = () => {
     return (
         <>
+            <SkipToContentLink>
+                <button type="button">Skip to main content</button>
+            </SkipToContentLink>
             <MainHeader />
             <div className={styles.appLayout}>
                 <nav
