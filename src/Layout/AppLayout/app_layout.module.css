@@ -23,18 +23,3 @@
     position: sticky;
     top: 20px;
 }
-
-.appLayout__footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 8rem;
-    border-top: 4px solid var(--primary-light-color);
-    background: var(--primary-color);
-    padding: 2rem;
-    color: var(--primary-text-color);
-}
-
-.appLayout__footer a {
-    color: inherit;
-}
