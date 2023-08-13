@@ -17,9 +17,9 @@
 }
 
 .formSelect {
-    box-shadow: var(--box-shadow-sm);
+    box-shadow: var(--box-shadow-generic);
     border: none;
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 0.8rem;
     color: var(--primary-color);
 }
 
@@ -49,7 +49,7 @@
 }
 
 .menu {
-    box-shadow: var(--box-shadow-lg);
+    box-shadow: var(--box-shadow-card);
     border-radius: var(--border-radius, 3px);
     background: var(--primary-text-color);
     padding: 0.4rem;

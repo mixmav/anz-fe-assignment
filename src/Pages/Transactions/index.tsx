@@ -21,6 +21,7 @@ import CashOutflowChart from './CashOutflowChart';
 
 import componentStyles from 'src/Assets/Styles/components.module.css';
 import utilityStyles from 'src/Assets/Styles/utility.module.css';
+import styles from './transactions.module.css';
 
 ChartJS.register(
     LinearScale,
@@ -126,7 +127,9 @@ const Transactions = () => {
         <>
             <h1>Transactions</h1>
 
-            <label className={`${componentStyles.formLabel}`}>
+            <label
+                className={`${componentStyles.formLabel} ${styles.accountSelect}`}
+            >
                 <span className={`${utilityStyles.screenReaderOnly}`}>
                     Select an account
                 </span>

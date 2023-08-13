@@ -22,8 +22,9 @@
 
     /* Design defaults */
     --border-radius: 3px;
-    --box-shadow-lg: 0 0 5px rgba(0, 0, 0, 0.2);
-    --box-shadow-sm: 0 0 2px rgba(0, 0, 0, 0.2);
+    --box-shadow-card: 0 0 5px rgba(0, 0, 0, 0.2);
+    --box-shadow-generic: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+        rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
     /* Layout */
     --max-content-width: 1600px;
