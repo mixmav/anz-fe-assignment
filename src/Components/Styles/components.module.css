@@ -10,6 +10,17 @@
     font-weight: bold;
 }
 
+.formLabel {
+    display: inline-flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.formSelect {
+    border: none;
+}
+
 .button_transparent {
     background-color: transparent;
     color: var(--primary-text-color);

@@ -26,7 +26,6 @@ const CashOutflowChart: React.FC<{ data: ChartData }> = ({ data }) => {
             };
         });
     }, [data]);
-    console.log('Augmented Chart Data:', augmentedChartData);
     return (
         <>
             <div className={`${styles.chartConatiner}`}>

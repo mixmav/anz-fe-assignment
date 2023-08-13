@@ -19,6 +19,8 @@ import { useEffect, useState } from 'react';
 import CashInflowChart from './CashInflowChart';
 import CashOutflowChart from './CashOutflowChart';
 
+import componentStyles from 'src/Components/Styles/components.module.css';
+
 ChartJS.register(
     LinearScale,
     CategoryScale,
@@ -122,6 +124,18 @@ const Transactions = () => {
     return (
         <>
             <h1>Transactions</h1>
+
+            <label className={`${componentStyles.formLabel}`}>
+                Select an account
+                <select
+                    defaultValue="0"
+                    className={`${componentStyles.formSelect}`}
+                >
+                    <option value="0">All Accounts</option>
+                    <option value="1">Account 1</option>
+                    <option value="2">Account 2</option>
+                </select>
+            </label>
             {inflowData !== null && <CashInflowChart data={inflowData} />}
             {outflowData !== null && <CashOutflowChart data={outflowData} />}
         </>
