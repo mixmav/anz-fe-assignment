@@ -5,9 +5,10 @@
     box-shadow: var(--box-shadow-card);
     border-radius: var(--border-radius);
     background: white;
-    padding: 1rem;
-    /* height: auto; */
-    overflow: auto;
+    /* height: 400px; */
+    overflow-x: auto;
+    /* min-height: 400px; */
+    /* overflow: auto; */
 }
 
 .accountSelect {
@@ -20,4 +21,13 @@
     color: var(--text-neutral-color);
     font-weight: 700;
     font-size: 1rem;
+}
+
+.chartCard__container {
+    margin: 0 auto;
+    padding: 1rem;
+    padding-bottom: 4rem;
+    width: calc(100% - 2rem);
+    min-width: 600px;
+    height: 100%;
 }

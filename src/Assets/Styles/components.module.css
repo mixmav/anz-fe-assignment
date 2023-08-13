@@ -12,7 +12,9 @@
 }
 
 .button_primary {
+    box-shadow: var(--box-shadow-generic);
     background-color: var(--primary-color);
+
     color: var(--primary-text-color);
 }
 
@@ -129,4 +131,15 @@
 }
 .menu__item:not(.menu__item_active):active {
     background: var(--primary-active-bg-color);
+}
+
+.checkboxLabel {
+    display: flex;
+    /* column-gap: 0.2rem; */
+    font-size: 0.8rem;
+}
+
+.checkboxLabel input {
+    vertical-align: middle;
+    margin-right: 8px; /* Adjust as needed for spacing */
 }

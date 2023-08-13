@@ -4,7 +4,8 @@ import { Chart } from 'react-chartjs-2';
 import styles from './transactions.module.css';
 import { useAccountsContext } from 'src/Context/AccountsContext';
 import { sumArraysOfArrays } from './util/sumArrayOfArrayst';
-
+import CanvasFallback from './CanvasFallback';
+// import utilityStyles from 'src/Assets/Styles/utility.module.css';
 const CashInflowChart = () => {
     const { selectedAccount, parsedAccountData } = useAccountsContext();
     const [augmentedChartData, setAugmentedChartData] =
@@ -60,13 +61,32 @@ const CashInflowChart = () => {
     }, [parsedAccountData, selectedAccount]);
     return (
         <section className={`${styles.chartCard}`}>
-            <h2 className={`${styles.chartCard__chartTitle}`}>Cash Inflow</h2>
-            <Chart
-                type="bar"
-                options={defaultOptions}
-                data={augmentedChartData}
-                fallbackContent={<h1>Hi</h1>}
-            ></Chart>
+            <div className={`${styles.chartCard__container}`}>
+                <h2 className={`${styles.chartCard__chartTitle}`}>
+                    Cash Inflow
+                </h2>
+                <Chart
+                    aria-label={`Cash Inflow Chart for ${
+                        selectedAccount === 0
+                            ? 'All Accounts'
+                            : 'Account ' + selectedAccount
+                    }`}
+                    type="bar"
+                    options={defaultOptions}
+                    data={augmentedChartData}
+                    fallbackContent={
+                        <CanvasFallback
+                            account={`${
+                                selectedAccount === 0
+                                    ? 'All Accounts'
+                                    : 'Account ' + selectedAccount
+                            }`}
+                            type="inflow"
+                            data={parsedAccountData}
+                        />
+                    }
+                ></Chart>
+            </div>
         </section>
     );
 };

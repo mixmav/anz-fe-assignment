@@ -32,6 +32,7 @@ const MainSideNav = () => {
         <>
             <Dropdown
                 className={`${styles.mobileNavDropdown}`}
+                role="navigation"
                 trigger={
                     <button
                         aria-label="Site navigation menu"
@@ -42,16 +43,7 @@ const MainSideNav = () => {
                     </button>
                 }
                 items={routes.map((route) => (
-                    <NavLink
-                        to={route.path}
-                        className={({ isActive }) =>
-                            `${componentStyles.menu__item} ${
-                                isActive
-                                    ? componentStyles.menu__item_active
-                                    : ''
-                            }`
-                        }
-                    >
+                    <NavLink to={route.path}>
                         <Icon icon={route.icon} />
                         {route.name}
                     </NavLink>
@@ -60,7 +52,6 @@ const MainSideNav = () => {
             <nav
                 className={`${styles.mainSideNav} ${componentStyles.menu} ${componentStyles.menu_primary} ${componentStyles.menu_bold} ${componentStyles.menu_xl}`}
             >
-                {/* <ProfileMenu /> */}
                 <ul>
                     {routes.map((route) => (
                         <li key={route.name}>
