@@ -13,6 +13,7 @@ import {
 
 import CashInfowChart from './CashInflowChart';
 import CashOutfowChart from './CashOutflowChart';
+import ShowTextAlternative from './ShowTextAlternative';
 import { AccountsContextProvider } from 'src/Context/AccountsContext';
 import AccountSelector from './AccountSelector';
 import { customCanvasBackgroundColor } from './util/chartDefaults';
@@ -42,6 +43,7 @@ const Transactions = () => {
                 <AccountSelector />
                 <CashInfowChart />
                 <CashOutfowChart />
+                <ShowTextAlternative />
             </section>
         </AccountsContextProvider>
     );
