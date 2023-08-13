@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 -   Only the `/transactions` route is implemented. The `/` route simply redirects to `/transactions`.
 -   TypeScript is used to ensure type safety and to catch errors early.
 
--   React Context is used to manage shared state between components, and to avoid prop drilling.
+-   The React Context API is used to manage shared state between components, and to avoid prop drilling.
 
 -   The CSV is read via a `fetch` call, and then parsed and transformed to the required format. The custom transformer I wrote makes no assumption about the year of the transactions, so it will work for any two years of transactions.
 
