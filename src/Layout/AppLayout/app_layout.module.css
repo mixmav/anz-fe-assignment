@@ -1,16 +1,27 @@
 .appLayout {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
     margin: 0 auto;
     padding: 1rem;
     max-width: var(--max-content-width);
 }
 
-.appLayout__main {
+.appLayout__mainContainer {
     position: relative;
     flex-grow: 1;
     z-index: var(--z-index-main-content);
-    padding-left: 1rem;
-    padding-left: 1rem;
+}
+
+.appLayout__main {
+    margin: 0 auto;
+    width: calc(100% - 2rem);
+    max-width: 800px;
+}
+
+@media screen and (min-width: 768px) {
+    .appLayout {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }

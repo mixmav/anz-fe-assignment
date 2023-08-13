@@ -1,5 +1,5 @@
 import Dropdown from 'src/Components/Dropdown';
-import componentStyles from 'src/Components/Styles/components.module.css';
+import componentStyles from 'src/Assets/Styles/components.module.css';
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ const ProfileMenu = () => {
                     <Icon icon="fa-solid:angle-down" />
                 </button>
             }
-            menuItems={[
+            items={[
                 <Link to="/">Your profile</Link>,
                 <Link to="/">Settings</Link>,
                 <Link to="/">Logout</Link>,

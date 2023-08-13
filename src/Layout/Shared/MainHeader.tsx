@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import AnzLogo from 'src/Assets/Img/anz-logo.png';
 import ProfileMenu from 'src/Layout/Shared/ProfileMenu';
-import styles from './main_header.module.css';
+import styles from './Styles/main_header.module.css';
 
 const MainHeader = () => {
     return (

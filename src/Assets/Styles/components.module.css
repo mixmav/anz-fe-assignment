@@ -4,10 +4,20 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    outline-offset: 2px;
     border: none;
-    border-radius: 3px;
+    border-radius: var(--border-radius);
     padding: 0.2rem 0.4rem;
     font-weight: bold;
+}
+
+.button_primary {
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+}
+
+.button_primary:focus-visible {
+    outline: var(--primary-light-color) solid 2px;
 }
 
 .button_transparent {
@@ -16,7 +26,7 @@
 }
 
 .button_transparent:focus-visible {
-    outline: var(--primary-text-color) solid 1px;
+    outline: var(--primary-text-color) solid 2px;
 }
 
 .button_transparent.button_expandable[aria-expanded='true'] {
@@ -24,9 +34,26 @@
     color: var(--primary-color) !important;
 }
 
-.button_transparent.button_expandable[aria-expanded='true']
-    svg[class^='iconify'] {
-    transform: rotate(180deg);
+.button_expandable[aria-expanded='true'] svg[class^='iconify'] {
+    transform: rotate(180deg); /* the angle bracket down icon */
+}
+
+.formLabel {
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 0.6rem;
+}
+
+.formSelect {
+    outline-offset: 2px;
+    box-shadow: var(--box-shadow-generic);
+    border: none;
+    padding: 0.2rem 0.8rem;
+    color: var(--primary-color);
+}
+
+.formSelect:focus-visible {
+    outline: var(--primary-color) solid 2px;
 }
 
 .avatar {
@@ -36,16 +63,16 @@
 }
 
 .menu {
-    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px 0;
-    border-radius: 3px;
+    box-shadow: var(--box-shadow-card);
+    border-radius: var(--border-radius);
     background: var(--primary-text-color);
     padding: 0.4rem;
-    min-width: 160px;
+    width: 160px;
     color: var(--primary-color);
     font-size: 0.8rem;
 }
 .menu_xl {
-    min-width: 200px;
+    width: 200px;
 }
 .menu_primary {
     padding: 0;
@@ -67,8 +94,9 @@
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
+    outline-offset: 2px;
     border: none;
-    border-radius: 3px;
+    border-radius: var(--border-radius);
     background: var(--primary-text-color);
     padding: 0.5rem 1rem;
     color: inherit;
@@ -78,26 +106,24 @@
 }
 
 .menu__item:focus-visible {
-    outline: var(--text-neutral-color) solid 1px;
+    outline: var(--text-neutral-color) solid 2px;
 }
 
 .menu__item svg {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .menu_xl .menu__item {
-    padding: 1rem 2rem;
-    padding-right: 4rem;
+    padding: 1em 1.5em;
+    padding-right: 4em;
 }
 
 .menu__item_active {
     background: var(--primary-light-color);
     color: var(--primary-text-color);
 }
-.menu__item_active:focus-visible {
-    outline: var(--text-neutral-color) solid 1px;
-}
+
 .menu__item:not(.menu__item_active):hover {
     background: var(--primary-focus-bg-color);
 }

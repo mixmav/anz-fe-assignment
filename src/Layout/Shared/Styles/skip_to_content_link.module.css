@@ -1,0 +1,10 @@
+.skipToContentLink {
+    position: absolute;
+    transform: translateX(-200%);
+    transition: transform 0.3s;
+    margin: 1rem;
+}
+.skipToContentLink:focus {
+    position: static;
+    transform: translateX(0);
+}
