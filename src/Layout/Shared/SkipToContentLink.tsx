@@ -6,7 +6,7 @@
 */
 
 import React from 'react';
-import styles from './skip_to_content_link.module.css';
+import styles from './Styles/skip_to_content_link.module.css';
 import componentStyles from 'src/Assets/Styles/components.module.css';
 
 interface SkipToContentLinkProps {

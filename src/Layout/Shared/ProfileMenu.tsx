@@ -20,7 +20,7 @@ const ProfileMenu = () => {
                     <Icon icon="fa-solid:angle-down" />
                 </button>
             }
-            menuItems={[
+            items={[
                 <Link to="/">Your profile</Link>,
                 <Link to="/">Settings</Link>,
                 <Link to="/">Logout</Link>,

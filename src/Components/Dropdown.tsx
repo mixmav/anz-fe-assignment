@@ -12,13 +12,18 @@ import componentStyles from 'src/Assets/Styles/components.module.css';
 
 interface DropdownProps {
     trigger: ReactElement<HTMLElement>;
-    menuItems: ReactNode[];
+    items: ReactNode[];
+    role?: string;
+    className?: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ trigger, menuItems }) => {
-    const { buttonProps, itemProps, isOpen } = useDropdownMenu(
-        menuItems.length
-    );
+const Dropdown: React.FC<DropdownProps> = ({
+    trigger,
+    items,
+    role,
+    className,
+}) => {
+    const { buttonProps, itemProps, isOpen } = useDropdownMenu(items.length);
 
     const accessibleTrigger = cloneElement(trigger, {
         role: 'button',
@@ -29,17 +34,17 @@ const Dropdown: React.FC<DropdownProps> = ({ trigger, menuItems }) => {
         <div
             className={`${styles.dropdown} ${
                 isOpen ? styles.dropdown_visible : ''
-            }`}
+            } ${className}`}
         >
             {accessibleTrigger}
             <div
                 className={`${styles.dropdown__menu} ${componentStyles.menu} ${componentStyles.menu_bold}`}
-                role="menu"
+                role={role ? role : 'menu'}
             >
                 <ul>
-                    {menuItems.map((item, i) => {
+                    {items.map((item, i) => {
                         const accessibleItem = cloneElement(
-                            menuItems[i] as ReactElement,
+                            items[i] as ReactElement,
                             {
                                 ...itemProps[i],
                                 className: `${componentStyles.menu__item}`,

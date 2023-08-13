@@ -1,7 +1,6 @@
 .appLayout {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
     margin: 0 auto;
     padding: 1rem;
     max-width: var(--max-content-width);
@@ -19,7 +18,10 @@
     max-width: 800px;
 }
 
-.appLayout__mainSideNav {
-    position: sticky;
-    top: 20px;
+@media screen and (min-width: 768px) {
+    .appLayout {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }

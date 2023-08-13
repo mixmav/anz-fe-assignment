@@ -34,8 +34,7 @@
     color: var(--primary-color) !important;
 }
 
-.button_transparent.button_expandable[aria-expanded='true']
-    svg[class^='iconify'] {
+.button_expandable[aria-expanded='true'] svg[class^='iconify'] {
     transform: rotate(180deg); /* the angle bracket down icon */
 }
 
