@@ -1,8 +1,9 @@
 import { Outlet } from 'react-router-dom';
-import MainHeader from './MainHeader';
 import { Icon } from '@iconify/react';
 import { NavLink } from 'react-router-dom';
 
+import MainHeader from './MainHeader';
+import ProfileMenu from 'src/Layout/Shared/ProfileMenu';
 import styles from './app_layout.module.css';
 import componentStyles from 'src/Components/Styles/components.module.css';
 
@@ -14,6 +15,7 @@ const AppLayout = () => {
                 <nav
                     className={`${componentStyles.menu} ${componentStyles.menu_primary} ${componentStyles.menu_bold} ${componentStyles.menu_xl}`}
                 >
+                    <ProfileMenu />
                     <ul>
                         <li>
                             <NavLink

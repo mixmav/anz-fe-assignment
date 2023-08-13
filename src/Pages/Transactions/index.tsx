@@ -18,7 +18,6 @@ import parseAndTransformCSV from './parseAndTransformCSV';
 import { useEffect, useState } from 'react';
 import CashInflowChart from './CashInflowChart';
 import CashOutflowChart from './CashOutflowChart';
-import { Chart } from 'chart.js/dist';
 
 ChartJS.register(
     LinearScale,
