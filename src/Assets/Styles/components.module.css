@@ -5,7 +5,7 @@
     align-items: center;
     cursor: pointer;
     border: none;
-    border-radius: 3px;
+    border-radius: var(--border-radius, 3px);
     padding: 0.2rem 0.4rem;
     font-weight: bold;
 }
@@ -13,12 +13,14 @@
 .formLabel {
     display: inline-flex;
     flex-direction: column;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+    font-size: 0.6rem;
 }
 
 .formSelect {
+    box-shadow: var(--box-shadow-sm);
     border: none;
+    padding: 0.2rem 0.4rem;
+    color: var(--primary-color);
 }
 
 .button_transparent {
@@ -37,7 +39,7 @@
 
 .button_transparent.button_expandable[aria-expanded='true']
     svg[class^='iconify'] {
-    transform: rotate(180deg);
+    transform: rotate(180deg); /* the angle bracket down icon */
 }
 
 .avatar {
@@ -47,8 +49,8 @@
 }
 
 .menu {
-    box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px 0;
-    border-radius: 3px;
+    box-shadow: var(--box-shadow-lg);
+    border-radius: var(--border-radius, 3px);
     background: var(--primary-text-color);
     padding: 0.4rem;
     min-width: 160px;
@@ -79,7 +81,7 @@
     align-items: center;
     cursor: pointer;
     border: none;
-    border-radius: 3px;
+    border-radius: var(--border-radius, 3px);
     background: var(--primary-text-color);
     padding: 0.5rem 1rem;
     color: inherit;

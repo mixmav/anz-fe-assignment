@@ -28,7 +28,7 @@ const CashOutflowChart: React.FC<{ data: ChartData }> = ({ data }) => {
     }, [data]);
     return (
         <>
-            <div className={`${styles.chartConatiner}`}>
+            <div className={`${styles.chartCard}`}>
                 <Chart
                     type="bar"
                     options={defaultOptions}

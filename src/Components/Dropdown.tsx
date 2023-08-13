@@ -8,7 +8,7 @@
 import { ReactElement, ReactNode, cloneElement } from 'react';
 import useDropdownMenu from 'react-accessible-dropdown-menu-hook';
 import styles from './dropdown.module.css';
-import componentStyles from 'src/Components/Styles/components.module.css';
+import componentStyles from 'src/Assets/Styles/components.module.css';
 
 interface DropdownProps {
     trigger: ReactElement<HTMLElement>;

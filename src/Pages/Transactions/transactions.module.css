@@ -1,7 +1,13 @@
-.chartConatiner {
+.chartCard {
     position: relative;
     margin: 0 auto;
-    /* width: 600px; */
+    margin-top: 1rem;
+
+    margin-bottom: 1rem;
+    box-shadow: var(--box-shadow-lg, rgba(0, 0, 0, 0.3) 0 2px 2px 0);
+    border-radius: var(--border-radius, 3px);
+    background: white;
+    padding: 2rem;
     /* height: auto; */
-    /* overflow: auto; */
+    overflow: auto;
 }

@@ -12,6 +12,7 @@
 }
 
 :root {
+    /* These and brand colors */
     --primary-color: #1a3858;
     --primary-light-color: #336fad;
     --primary-text-color: #fff;
@@ -19,9 +20,29 @@
     --primary-active-bg-color: #c3e4ff;
     --text-neutral-color: #212121;
 
-    --max-content-width: 1400px;
+    /* Design defaults */
+    --border-radius: 3px;
+    --box-shadow-lg: 0 0 5px rgba(0, 0, 0, 0.2);
+    --box-shadow-sm: 0 0 2px rgba(0, 0, 0, 0.2);
 
+    /* Layout */
+    --max-content-width: 1600px;
+
+    /* Z-index */
     --z-index-main-header: 99;
     --z-index-main-content: 98;
     --z-index-component-dropdown: 100;
+}
+
+body {
+    background: #f3f3f3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--primary-color);
 }

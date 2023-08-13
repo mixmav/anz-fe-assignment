@@ -7,10 +7,19 @@
     max-width: var(--max-content-width);
 }
 
-.appLayout__main {
+.appLayout__mainContainer {
     position: relative;
     flex-grow: 1;
     z-index: var(--z-index-main-content);
-    padding-left: 1rem;
-    padding-left: 1rem;
+}
+
+.appLayout__main {
+    margin: 0 auto;
+    width: calc(100% - 2rem);
+    max-width: 800px;
+}
+
+.appLayout__mainSideNav {
+    position: sticky;
+    top: 20px;
 }

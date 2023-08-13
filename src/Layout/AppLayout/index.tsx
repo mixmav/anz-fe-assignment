@@ -3,9 +3,9 @@ import { Icon } from '@iconify/react';
 import { NavLink } from 'react-router-dom';
 
 import MainHeader from './MainHeader';
-import ProfileMenu from 'src/Layout/Shared/ProfileMenu';
+// import ProfileMenu from 'src/Layout/Shared/ProfileMenu';
 import styles from './app_layout.module.css';
-import componentStyles from 'src/Components/Styles/components.module.css';
+import componentStyles from 'src/Assets/Styles/components.module.css';
 
 const AppLayout = () => {
     return (
@@ -13,9 +13,9 @@ const AppLayout = () => {
             <MainHeader />
             <div className={styles.appLayout}>
                 <nav
-                    className={`${componentStyles.menu} ${componentStyles.menu_primary} ${componentStyles.menu_bold} ${componentStyles.menu_xl}`}
+                    className={`${styles.appLayout__mainSideNav} ${componentStyles.menu} ${componentStyles.menu_primary} ${componentStyles.menu_bold} ${componentStyles.menu_xl}`}
                 >
-                    <ProfileMenu />
+                    {/* <ProfileMenu /> */}
                     <ul>
                         <li>
                             <NavLink
@@ -80,9 +80,11 @@ const AppLayout = () => {
                     </ul>
                 </nav>
 
-                <main className={`${styles.appLayout__main}`}>
-                    <Outlet />
-                </main>
+                <div className={`${styles.appLayout__mainContainer}`}>
+                    <main className={`${styles.appLayout__main}`}>
+                        <Outlet />
+                    </main>
+                </div>
             </div>
         </>
     );

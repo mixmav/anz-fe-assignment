@@ -19,7 +19,8 @@ import { useEffect, useState } from 'react';
 import CashInflowChart from './CashInflowChart';
 import CashOutflowChart from './CashOutflowChart';
 
-import componentStyles from 'src/Components/Styles/components.module.css';
+import componentStyles from 'src/Assets/Styles/components.module.css';
+import utilityStyles from 'src/Assets/Styles/utility.module.css';
 
 ChartJS.register(
     LinearScale,
@@ -126,7 +127,9 @@ const Transactions = () => {
             <h1>Transactions</h1>
 
             <label className={`${componentStyles.formLabel}`}>
-                Select an account
+                <span className={`${utilityStyles.screenReaderOnly}`}>
+                    Select an account
+                </span>
                 <select
                     defaultValue="0"
                     className={`${componentStyles.formSelect}`}

@@ -1,5 +1,5 @@
 import Dropdown from 'src/Components/Dropdown';
-import componentStyles from 'src/Components/Styles/components.module.css';
+import componentStyles from 'src/Assets/Styles/components.module.css';
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
 
