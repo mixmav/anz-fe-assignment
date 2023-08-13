@@ -20,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     -   Accessible alternatives to convey information that's displayed using the `canvas` element
     -   Reduced motion for animations when requested by the user
     -   Responsive design for mobile and desktop
-    -   Color contrast ratio of at least 4.5:1 for text and interactive elements
+    -   Color contrast ratio of at least 4.5:1 for text and 3:1 for graphics and user interface components
 
 ## CSS Naming Convention
 

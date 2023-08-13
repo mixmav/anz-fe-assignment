@@ -36,9 +36,6 @@
 }
 
 .menu {
-    display: flex;
-    row-gap: 0.5rem;
-    flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px 0;
     border-radius: 3px;
     background: var(--primary-text-color);
@@ -81,7 +78,7 @@
 }
 
 .menu__item:focus-visible {
-    outline: var(--primary-light-color) solid 1px;
+    outline: var(--text-neutral-color) solid 1px;
 }
 
 .menu__item svg {
