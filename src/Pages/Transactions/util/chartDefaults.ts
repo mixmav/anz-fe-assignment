@@ -4,6 +4,7 @@ export const defaultOptions: ChartOptions = {
     responsive: true,
     plugins: {
         legend: {
+            reverse: true,
             position: 'bottom' as const,
         },
     },

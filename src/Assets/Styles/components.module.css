@@ -54,7 +54,7 @@
 
 .menu {
     box-shadow: var(--box-shadow-card);
-    /* border-radius: var(--border-radius, 3px); */
+    border-radius: var(--border-radius, 3px);
     background: var(--primary-text-color);
     padding: 0.4rem;
     width: 160px;
@@ -85,7 +85,7 @@
     align-items: center;
     cursor: pointer;
     border: none;
-    /* border-radius: var(--border-radius, 3px); */
+    border-radius: var(--border-radius, 3px);
     background: var(--primary-text-color);
     padding: 0.5rem 1rem;
     color: inherit;
