@@ -15,6 +15,7 @@ const CashOutflowChart: React.FC<{ data: ChartData }> = ({ data }) => {
                         ...data.datasets[0],
                         label: 'Cash Outflow 2023',
                         backgroundColor: '#FA7532',
+                        borderColor: '#FA7532',
                     },
                     {
                         ...data.datasets[1],

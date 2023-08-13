@@ -15,7 +15,7 @@ import {
 } from 'chart.js';
 
 import parseAndTransformCSV from './parseAndTransformCSV';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import CashInflowChart from './CashInflowChart';
 import CashOutflowChart from './CashOutflowChart';
 
@@ -53,8 +53,8 @@ const defaultChartData: ChartData = {
             label: 'Dataset 2',
             backgroundColor: '#3361BB',
             data: [],
-            borderColor: 'white',
-            borderWidth: 2,
+            borderColor: '#3361BB',
+            borderWidth: 0,
         },
         {
             type: 'line' as const,
@@ -69,7 +69,11 @@ const defaultChartData: ChartData = {
 const Transactions = () => {
     const [inflowData, setInflowData] = useState<ChartData | null>(null);
     const [outflowData, setOutflowData] = useState<ChartData | null>(null);
-
+    const [selectedAccount, setSelectedAccount] = useState<number>(0);
+    const onChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        const value = parseInt(event.target.value);
+        setSelectedAccount(value);
+    };
     useEffect(() => {
         fetch('/api/sample_data.csv')
             .then((response) => response.text())
@@ -134,13 +138,15 @@ const Transactions = () => {
                     Select an account
                 </span>
                 <select
-                    defaultValue="0"
+                    defaultValue={selectedAccount}
+                    onChange={onChange}
                     className={`${componentStyles.formSelect}`}
                 >
                     <option value="0">All Accounts</option>
                     <option value="1">Account 1</option>
                     <option value="2">Account 2</option>
                 </select>
+                <p>Selected account: {selectedAccount}</p>
             </label>
             {inflowData !== null && <CashInflowChart data={inflowData} />}
             {outflowData !== null && <CashOutflowChart data={outflowData} />}
