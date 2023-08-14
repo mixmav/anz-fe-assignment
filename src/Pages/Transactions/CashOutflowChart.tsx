@@ -18,22 +18,19 @@ const CashOutflowChart = () => {
             const years = parsedAccountData[0].years;
             let data: [number[], number[]] = [[], []];
             if (selectedAccount > 0) {
-                const allData = parsedAccountData[selectedAccount - 1].data;
                 data = [
-                    allData[`cashOutflow${years[0]}`],
-                    allData[`cashOutflow${years[1]}`],
+                    parsedAccountData[selectedAccount - 1].data
+                        .cashOutflowYear1,
+                    parsedAccountData[selectedAccount - 1].data
+                        .cashOutflowYear2,
                 ];
             } else if (selectedAccount === 0) {
                 // ALL Accounts combined
                 const toAddYear1: number[][] = [];
                 const toAddYear2: number[][] = [];
                 parsedAccountData.forEach((account) => {
-                    toAddYear1.push(
-                        account.data[`cashOutflow${account.years[0]}`]
-                    );
-                    toAddYear2.push(
-                        account.data[`cashOutflow${account.years[1]}`]
-                    );
+                    toAddYear1.push(account.data.cashOutflowYear1);
+                    toAddYear2.push(account.data.cashOutflowYear2);
                 });
                 data = [
                     sumArraysOfArrays(toAddYear1),
@@ -94,17 +91,7 @@ const CashOutflowChart = () => {
                     type="bar"
                     options={augmentedChartOptions}
                     data={augmentedChartData}
-                    fallbackContent={
-                        <CanvasFallback
-                            account={`${
-                                selectedAccount === 0
-                                    ? 'All Accounts'
-                                    : 'Account ' + selectedAccount
-                            }`}
-                            type="outflow"
-                            data={parsedAccountData}
-                        />
-                    }
+                    fallbackContent={<CanvasFallback type="outflow" />}
                 ></Chart>
             </div>
         </section>

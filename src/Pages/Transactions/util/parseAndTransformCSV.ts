@@ -73,10 +73,10 @@ const parseAndTransformCSV = (csvText: string): ParsedAccountData[] => {
             months: months,
             years: [year1, year2].sort((a, b) => b - a), // Sort in descending order
             data: {
-                [`cashInflow${year1}`]: cashInflowYear1,
-                [`cashOutflow${year1}`]: cashOutflowYear1,
-                [`cashInflow${year2}`]: cashInflowYear2,
-                [`cashOutflow${year2}`]: cashOutflowYear2,
+                cashInflowYear1,
+                cashOutflowYear1,
+                cashInflowYear2,
+                cashOutflowYear2,
             },
         });
     }
