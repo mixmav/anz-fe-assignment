@@ -34,7 +34,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Because BEM is used in conjunction with CSS modules, the naming convention is slightly different to the standard BEM convention. Instead of using hyphens, which would interfere with JavaScript syntax, underscores are used to separate blocks, elements, and modifiers instead.
 
-Block names are kebab-cased, for example `mainHeader`. Nested elements are separated by two underscores, for example `mainHeader__tagline`. Modifiers are separated by a single underscore, for example `mainHeader__tagline_small`.
+Block names are camelCased, for example `mainHeader`. Nested elements are separated by two underscores, for example `mainHeader__tagline`. Modifiers are separated by a single underscore, for example `mainHeader__tagline_small`.
 
 ## Available Scripts
 
