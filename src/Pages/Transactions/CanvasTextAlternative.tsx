@@ -3,8 +3,8 @@ import componentStyles from 'src/Assets/Styles/components.module.css';
 import { useAccountsContext } from 'src/Context/AccountsContext';
 import CanvasFallback from './CanvasFallback';
 
-const ShowTextAlternative = () => {
-    const { selectedAccount, parsedAccountData } = useAccountsContext();
+const CanvasTextAlternative = () => {
+    const { selectedAccount } = useAccountsContext();
 
     const [canvasFallbackVisible, setCanvasFallbackVisible] = useState(false);
     const handleCanvasFallbackVisibleChange = () => {
@@ -20,23 +20,15 @@ const ShowTextAlternative = () => {
                     type="checkbox"
                     aria-checked={canvasFallbackVisible}
                     aria-label="Show text alternative"
-                    aria-controls="fallback-table-inflow"
+                    aria-controls="fallback-table-inflow-and-outflow"
                 />
                 Show text alternative
             </label>
             {canvasFallbackVisible && (
-                <CanvasFallback
-                    account={`${
-                        selectedAccount === 0
-                            ? 'All Accounts'
-                            : 'Account ' + selectedAccount
-                    }`}
-                    type="inflow-and-outflow"
-                    data={parsedAccountData}
-                />
+                <CanvasFallback type="inflow-and-outflow" />
             )}
         </>
     );
 };
 
-export default ShowTextAlternative;
+export default CanvasTextAlternative;

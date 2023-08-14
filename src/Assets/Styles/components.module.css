@@ -143,3 +143,26 @@
     vertical-align: middle;
     margin-right: 8px; /* Adjust as needed for spacing */
 }
+.table {
+    border: 1px solid var(--primary-color);
+    border-collapse: collapse;
+    background: white;
+    color: var(--text-neutral-color);
+    font-size: 1rem;
+}
+.table thead th,
+.table tfoot th {
+    color: var(--primary-color);
+}
+
+.table caption {
+    padding: 0.5rem;
+}
+.table th,
+.table td {
+    border: 1px solid var(--primary-color);
+    padding: 0.5rem;
+}
+.table_centered {
+    margin: 0 auto;
+}
