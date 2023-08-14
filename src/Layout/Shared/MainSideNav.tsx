@@ -1,6 +1,8 @@
 import { Icon } from '@iconify/react';
-import { NavLink } from 'react-router-dom';
+import React, { forwardRef } from 'react';
+import { NavLink, useMatch, useResolvedPath } from 'react-router-dom';
 import componentStyles from 'src/Assets/Styles/components.module.css';
+import CustomNavLink from 'src/Components/CustomNavLink';
 import Dropdown from 'src/Components/Dropdown';
 import styles from './Styles/main_side_nav.module.css';
 
@@ -30,6 +32,7 @@ const routes = [
 const MainSideNav = () => {
     return (
         <>
+            {/* Only shown on < md screens */}
             <Dropdown
                 className={`${styles.mobileNavDropdown}`}
                 role="navigation"
@@ -42,13 +45,12 @@ const MainSideNav = () => {
                         <Icon icon="fa-solid:angle-down" />
                     </button>
                 }
-                items={routes.map((route) => (
-                    <NavLink to={route.path}>
-                        <Icon icon={route.icon} />
-                        {route.name}
-                    </NavLink>
-                ))}
+                items={routes.map((route) => {
+                    return <CustomNavLink to={route.path} title={route.name} />;
+                })}
             />
+
+            {/* Only shown on md and up screens */}
             <nav
                 className={`${styles.mainSideNav} ${componentStyles.menu} ${componentStyles.menu_primary} ${componentStyles.menu_bold} ${componentStyles.menu_xl}`}
             >

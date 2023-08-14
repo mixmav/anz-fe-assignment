@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import componentStyles from 'src/Assets/Styles/components.module.css';
-import { useAccountsContext } from 'src/Context/AccountsContext';
 import CanvasFallback from './CanvasFallback';
-
+import styles from './transactions.module.css';
 const CanvasTextAlternative = () => {
-    const { selectedAccount } = useAccountsContext();
-
     const [canvasFallbackVisible, setCanvasFallbackVisible] = useState(false);
     const handleCanvasFallbackVisibleChange = () => {
         setCanvasFallbackVisible(!canvasFallbackVisible);
@@ -25,7 +22,9 @@ const CanvasTextAlternative = () => {
                 Show text alternative
             </label>
             {canvasFallbackVisible && (
-                <CanvasFallback type="inflow-and-outflow" />
+                <div className={`${styles.canvasTextAlternative}`}>
+                    <CanvasFallback type="inflow-and-outflow" />
+                </div>
             )}
         </>
     );

@@ -41,8 +41,8 @@ export const defaultChartData: ChartData = {
         {
             type: 'line' as const,
             label: 'Dataset 1',
-            borderColor: '#575757',
-            backgroundColor: '#575757',
+            borderColor: '#9B9B9B',
+            backgroundColor: '#9B9B9B',
             borderWidth: 2,
             data: [],
             order: 1,

@@ -50,6 +50,7 @@
     outline-offset: 2px;
     box-shadow: var(--box-shadow-generic);
     border: none;
+    background: var(--primary-text-color);
     padding: 0.2rem 0.8rem;
     color: var(--primary-color);
 }
@@ -107,6 +108,12 @@
     text-decoration: none;
 }
 
+.menu .active {
+    display: none;
+    background: var(--primary-light-color);
+    color: var(--primary-text-color);
+}
+
 .menu__item:focus-visible {
     outline: var(--text-neutral-color) solid 2px;
 }
@@ -147,6 +154,7 @@
     border: 1px solid var(--primary-color);
     border-collapse: collapse;
     background: white;
+    min-width: 400px;
     color: var(--text-neutral-color);
     font-size: 1rem;
 }
